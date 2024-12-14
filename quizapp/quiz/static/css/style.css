@@ -1,0 +1,125 @@
+/* Basic styling for the entire page */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: #b2f7ef;
+}
+.quiz{
+    padding: 10px;
+    background: linear-gradient(45deg, #f7d6e0, #f2b5d4);  /* Gradient from light pink to peach */
+    width: 80%;
+    max-width: 900px; /* Set maximum width */
+    min-height: 300px; /* Minimum height */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    display: flex;
+    flex-direction: column; /* Stack content vertically */
+    justify-content: center; /* Center content vertically */
+    margin-top: 50px; 
+    height: 50%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 10px;
+    background-color: #b2f7ef;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+header, footer {
+    padding: 20px;
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+}
+
+footer {
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 100px;
+    font-size: 40px;
+    font-family: 'Times New Roman', Times, serif;
+}
+h3{
+    padding-left: 100px;
+    text-align: center;
+    font-size: 25px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+form {
+    margin-top: 20px;
+    padding-left: 100px;
+}
+
+.options {
+    margin-bottom: 40px;
+    text-align: center;
+    align-items: center;
+
+}
+
+input[type="radio"] {
+    margin-right: 10px;
+}
+.answer{
+    text-align: center;
+}
+button {
+    background-color: #f5ee9a;
+    color: black;
+    padding: 12px;
+    border: none;
+    border-radius: 15px;
+    width: 30%;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    position: relative;
+    transition: transform 0.3s ease;
+    align-content: center;
+}
+
+button:hover {
+    background-color: #edde7c;
+    transform: scale(1.03);
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.message.correct {
+    color: green;
+}
+
+.message.incorrect {
+    color: red;
+}
+
+/* Styling for mobile responsiveness */
+@media only screen and (max-width: 600px) {
+    .container {
+        width: 95%;
+        padding: 10px;
+    }
+
+    button {
+        padding: 15px;
+        font-size: 18px;
+    }
+}

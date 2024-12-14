@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            text-align: center;
+            padding: 50px;
+        }
+
+        .start-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 18px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .start-button:hover {
+            background-color: #45a049;
+        }
+        @media only screen and (max-width: 600px) {
+            .start-button {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>Welcome To The Quiz Home</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="player_name">Choose Your Player:</label>
+        <select name="player_name" id="player_name">
+            <option value="Lily">Lily</option>
+            <option value="Mia">Mia</option>
+            <option value="Leo">Leo</option>
+            <option value="Max">Max</option>
+        </select>
+
+        <p>Click the button below to start the quiz.</p>
+    <a href="{% url 'quiz:quiz_page' session_id=session.id %}" class="start-button">Start Quiz</a>
+    </form>
+
+    
+</body>
+</html>

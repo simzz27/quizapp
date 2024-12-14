@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz-Page</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h2>Quiz Session: {{ session.id }}</h2>
+    <h3>
+        <h1>Welcome, {{ player_name }}!</h1>
+        <img src="{% static 'images/{{ player_image }}' %}" alt="{{ player_name }}'s Image">
+
+    <div class="container quiz">
+    <h3>{{ question.text }}</h3>
+    
+    {% if message %}
+        <p>{{ message }}</p>  <!-- Display the feedback message -->
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <input type="radio" name="answer" value="1"> {{ question.option_1 }}<br>
+        <input type="radio" name="answer" value="2"> {{ question.option_2 }}<br>
+        <input type="radio" name="answer" value="3"> {{ question.option_3 }}<br>
+        <input type="radio" name="answer" value="4"> {{ question.option_4 }}<br>
+        <button type="submit">Submit Answer</button>
+    </form>
+
+    </div>
+    <div class="container answer">
+    <p>Total Questions Answered: {{ session.total_questions }}</p>
+    <p>Correct Answers: {{ session.correct_answers }}</p>
+    <p>Incorrect Answers: {{ session.incorrect_answers }}</p>
+    </div>
+</body>
+</html>
