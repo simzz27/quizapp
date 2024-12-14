@@ -1,0 +1,88 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    background-color: #f9f6f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+h2 {
+    color: #ff5722;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px #ffe082;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.5rem;
+    background: #dcedc8;
+    border: 2px dashed #81c784;
+    border-radius: 10px;
+    padding: 10px 20px;
+    margin: 10px 0;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    color: #388e3c;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.2;
+}
+
+h2::after {
+    content: '🎉';
+    font-size: 2rem;
+    margin-left: 10px;
+}
+
+p:nth-child(4) {
+    background: #ffecb3;
+    border-color: #ffd54f;
+    color: #f57c00;
+}
+
+p:nth-child(3) {
+    background: #b3e5fc;
+    border-color: #03a9f4;
+    color: #0288d1;
+}
+
+p:nth-child(4) {
+    background: #ffcdd2;
+    border-color: #e57373;
+    color: #d32f2f;
+}
+.message{
+    background:rgb(243, 180, 243);
+    border-color: rgb(236, 84, 236);
+    color: rgb(243, 44, 243);
+}
+.start-button {
+    display: inline-block;
+    background: #4caf50;
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+
+.start-button:hover {
+    background: #388e3c;
+    transform: scale(1.1);
+}
+

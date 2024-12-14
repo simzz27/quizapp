@@ -3,9 +3,10 @@ body {
     font-family: 'Arial', sans-serif;
     background-color: #f7f7f7;
     color: #333;
-    margin: 0;
-    padding: 0;
+    margin: 30px;
+    padding: 20px;
     background-color: #b2f7ef;
+    display: flex;
 }
 .quiz{
     padding: 10px;
@@ -26,14 +27,14 @@ body {
 .container {
     width: 80%;
     max-width: 800px;
-    margin: 50px auto;
+    margin: 90px auto;
     padding: 10px;
     background-color: #b2f7ef;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 header, footer {
-    padding: 20px;
+    padding: 40px;
     width: 100%;
     background-color: #4CAF50;
     color: white;
@@ -42,9 +43,10 @@ header, footer {
 
 footer {
     margin-top: auto; /* Push footer to the bottom */
+    margin-bottom: 30px;
 }
 
-h2 {
+h1 {
     text-align: center;
     color: #333;
     margin-bottom: 100px;
@@ -61,8 +63,33 @@ h3{
 form {
     margin-top: 20px;
     padding-left: 100px;
+    margin: 20px auto; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    width: 100%; 
 }
 
+button {
+    background-color: #f5ee9a;
+    color: black;
+    padding: 12px;
+    border: none;
+    border-radius: 15px;
+    width: auto; /* Set width to auto */
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+    position: relative;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+button:hover {
+    background-color: #edde7c;
+    transform: scale(1.03);
+}
 .options {
     margin-bottom: 40px;
     text-align: center;
@@ -75,25 +102,7 @@ input[type="radio"] {
 }
 .answer{
     text-align: center;
-}
-button {
-    background-color: #f5ee9a;
-    color: black;
-    padding: 12px;
-    border: none;
-    border-radius: 15px;
-    width: 30%;
-    cursor: pointer;
-    font-size: 16px;
-    margin-top: 20px;
-    position: relative;
-    transition: transform 0.3s ease;
-    align-content: center;
-}
-
-button:hover {
-    background-color: #edde7c;
-    transform: scale(1.03);
+    padding-bottom: 60px;
 }
 
 .message {
@@ -103,11 +112,11 @@ button:hover {
     font-weight: bold;
 }
 
-.message.correct {
+.message.correct_answers {
     color: green;
 }
 
-.message.incorrect {
+.message.incorrect_answers {
     color: red;
 }
 

@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Result</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-result.css' %}">
 </head>
 <body>
     <h2>Quiz Completed!</h2>
+    {% if message %}
+        <p class="message">{{ message }}</p>  <!-- Display the feedback message -->
+    {% endif %}
     <p>Total Questions Answered: {{ session.total_questions }}</p>
     <p>Correct Answers: {{ session.correct_answers }}</p>
     <p>Incorrect Answers: {{ session.incorrect_answers }}</p>
+
+    <a href="{% url 'quiz:home' %}" class="start-button">Start New Quiz</a>
+
 </body>
 </html>

@@ -9,11 +9,10 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
 </head>
 <body>
-    <h2>Quiz Session: {{ session.id }}</h2>
-    <h3>
-        <h1>Welcome, {{ player_name }}!</h1>
-        <img src="{% static 'images/{{ player_image }}' %}" alt="{{ player_name }}'s Image">
-
+    <div>
+    <h1 style="text-align:center;">Welcome, {{ player_name }}!</h1>
+    <img src="{% static player_image %}" alt="{{ player_name }}'s Image" style="width: 5%; display: block; margin-left: auto; margin-right: auto;">
+    </div>
     <div class="container quiz">
     <h3>{{ question.text }}</h3>
     
@@ -21,7 +20,7 @@
         <p>{{ message }}</p>  <!-- Display the feedback message -->
     {% endif %}
 
-    <form method="POST">
+    <form method="POST" class="form">
         {% csrf_token %}
         <input type="radio" name="answer" value="1"> {{ question.option_1 }}<br>
         <input type="radio" name="answer" value="2"> {{ question.option_2 }}<br>
@@ -31,7 +30,7 @@
     </form>
 
     </div>
-    <div class="container answer">
+    <div class="answer">
     <p>Total Questions Answered: {{ session.total_questions }}</p>
     <p>Correct Answers: {{ session.correct_answers }}</p>
     <p>Incorrect Answers: {{ session.incorrect_answers }}</p>

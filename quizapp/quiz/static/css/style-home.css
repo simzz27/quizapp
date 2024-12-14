@@ -1,0 +1,114 @@
+/* Basic reset styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background-color: #b2f7ef;  /* Light blue background */
+  }
+  
+  h1 {
+    text-align: center;
+    font-size: 3em;
+    margin: 2rem 0;  /* Margin top and bottom */
+    color: #f590c2;  /* Light blue for heading */
+    padding-bottom: 30px;
+    padding-top: 15px;
+    text-shadow: 0 2px white, 0 3px;
+  }
+  
+  /* Style the form container */
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;  /* Center the form horizontally */
+    width: 60%;
+    padding: 2rem;
+    border-radius: 10px;
+    background-color: #fff; /* White background for form */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Style the player name label */
+  label {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #666; /* Light gray for label text */
+
+  }
+  
+  /* Style the player name select dropdown */
+  select {
+    width: 30%;
+    padding: 10px;
+    border: 1px solid #ccc; /* Light gray border */
+    border-radius: 5px;
+    font-size: 1em;
+    color: #333; /* Dark gray for text */
+  }
+  
+  /* Style the "Click the button" paragraph */
+  p {
+    text-align: center;
+    margin: 20px 0;
+    color: #666; /* Light gray for paragraph text */
+    font-size: 20px;
+  }
+  
+  /* Style the start button */
+  .start-button {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #33b5e5; /* Light blue for button */
+    color: #fff; /* White text for button */
+    transition: background-color 0.2s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .start-button:hover {
+    background-color: #29a3d3; /* Darker blue on hover */
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+
+  }
+  .character-selection {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  .character-selection input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+  }
+  .character-selection input[type="radio"]:checked + label .character {
+    border: 2px solid #33b5e5;
+  }
+  
+  .character {
+    text-align: center;
+    cursor: pointer;
+    padding-right: 10px;
+  }
+  
+  .character img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .character img:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .character p {
+    text-align: center;
+    font-size: 30px;
+    color: #f590c2;  /* Light blue for heading */
+    text-shadow: 0 2px white, 0 1px;
+    font-weight: 60;
+  }

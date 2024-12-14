@@ -4,53 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Home</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f7f7f7;
-            text-align: center;
-            padding: 50px;
-        }
-
-        .start-button {
-            background-color: #4CAF50;
-            color: white;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 5px;
-            font-size: 18px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-
-        .start-button:hover {
-            background-color: #45a049;
-        }
-        @media only screen and (max-width: 600px) {
-            .start-button {
-                font-size: 16px;
-                padding: 12px 20px;
-            }
-        }
-        
-    </style>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style-home.css' %}">
 </head>
 <body>
     <h1>Welcome To The Quiz Home</h1>
-    <form method="POST">
+    <form method="POST" action="{% url 'quiz:quiz_page' session_id=session.id %}">
         {% csrf_token %}
         <label for="player_name">Choose Your Player:</label>
-        <select name="player_name" id="player_name">
-            <option value="Lily">Lily</option>
-            <option value="Mia">Mia</option>
-            <option value="Leo">Leo</option>
-            <option value="Max">Max</option>
-        </select>
+        
+            <div class="character-selection">
+                <!-- Hidden radio buttons -->
+                <input type="radio" id="player1" name="player_name" value="Lily" hidden>
+                <label for="player1" class="player-label">
+                    <div class="character">
+                        <img src="{% static 'images/player1.png' %}" alt="Lily">
+                        <p>Lily</p>
+                    </div>
+                </label>
+
+                <input type="radio" id="player2" name="player_name" value="Mia" hidden>
+                <label for="player2" class="player-label">
+                    <div class="character">
+                        <img src="{% static 'images/player2.png' %}" alt="Mia">
+                        <p>Mia</p>
+                    </div>
+                </label>
+
+                <input type="radio" id="player3" name="player_name" value="Leo" hidden>
+                <label for="player3" class="player-label">
+                    <div class="character">
+                        <img src="{% static 'images/player3.png' %}" alt="Leo">
+                        <p>Leo</p>
+                    </div>
+                </label>
+
+                <input type="radio" id="player4" name="player_name" value="Max" hidden>
+                <label for="player4" class="player-label">
+                    <div class="character">
+                        <img src="{% static 'images/player4.png' %}" alt="Max">
+                        <p>Max</p>
+                    </div>
+                </label>
+            </div>
 
         <p>Click the button below to start the quiz.</p>
-    <a href="{% url 'quiz:quiz_page' session_id=session.id %}" class="start-button">Start Quiz</a>
+        <button type="submit" class="start-button">Start Quiz</button>
     </form>
 
-    
+    <script>
+        // Add event listeners to each label to trigger radio button selection
+        document.querySelectorAll('.player-label').forEach(function(label) {
+            label.addEventListener('click', function() {
+                // Check if the radio button is already checked, if not select it
+                var radio = document.getElementById(label.getAttribute('for'));
+                radio.checked = true;
+            });
+        });
+    </script>
 </body>
 </html>
